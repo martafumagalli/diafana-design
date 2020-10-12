@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="Viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>GCC Project</title>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-102409893-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!--[if (gte mso 9)|(IE)]>
+<style type="text/css">
+table {border-collapse: collapse !important;}
+</style>
+<![endif]-->
+
+<!--[if (gte mso 9)|(IE)]>
+<style type="text/css">
+body, table, td {font-family: Verdana, Geneva, sans-serif !important;}
+</style>
+<![endif]-->
+
+<style type="text/css">
+
+body{
+margin:0;
+padding:0; 
+background-color:#ffffff;
+-webkit-text-size-adjust:100%;
+-ms-text-size-adjust:100%;
+}
+
+table{
+border-collapse:collapse;
+border-spacing:0;
+mso-table-lspace:0pt;
+mso-table-rspace:0pt;
+}
+
+td{
+border-collapse:collapse;
+padding:0;
+}
+
+img{
+border:0 none;
+height:auto;
+line-height:100%;
+outline:none;
+text-decoration:none;
+-ms-interpolation-mode:bicubic;
+display: block;
+}
+
+a img{
+border:0 none;
+}
+
+a { text-decoration: none;
+}
+
+.ExternalClass {
+width:100%;
+}
+
+.ExternalClass,
+.ExternalClass p,
+.ExternalClass span,
+.ExternalClass font,
+.ExternalClass td,
+.ExternalClass div {
+    line-height: 100%;
+}
+
+#div_wrapper {
+min-width: 320px;
+font-family: Verdana, Geneva, sans-serif;
+}
+
+#preheader {
+font-size: 12px;
+font-weight: normal;
+color: #999999;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+#header_h1 {
+padding-top: 30px;
+padding-left: 30px;
+padding-right: 30px;
+font-size: 21px;
+font-weight: bold;
+color: #222222;
+letter-spacing: -2px;
+line-height: -5px;
+text-align: left;
+}
+
+.gcc {
+font-size: 32px;
+letter-spacing: -4px;
+}
+
+#header_h2 {
+font-size: 16px;
+font-weight: normal;
+color: #999999;
+padding-left: 30px;
+padding-right: 30px;
+padding-bottom: 20px;
+letter-spacing: 1px;
+text-align: left;
+}
+
+#body_h3 {
+font-size: 18px;
+font-weight: bold;
+color: #222222;
+padding-top: 30px;
+padding-left: 30px;
+padding-right: 30px;
+padding-bottom: 20px;
+text-align: left;
+}
+
+#body_h4 {
+font-size: 14px;
+font-weight: normal;
+color: #999999;
+padding-left: 30px;
+padding-right: 30px;
+text-align: left;
+}
+
+.left {
+padding-top: 30px;
+padding-left: 30px;
+padding-bottom: 20px;
+vertical-align: top;
+}
+
+.right {
+padding-top: 30px;
+padding-left: 30px;
+padding-right: 30px;
+padding-bottom: 20px;
+text-align: left;
+}
+
+.hr {
+border-bottom: solid 1px #bbbbbb;
+width: 90%;
+}
+
+.hr td {
+padding-left: 20px;
+padding-right: 20px;
+}
+
+.column_h3 {
+font-size: 16px;
+font-weight: bold;
+color: #222222;
+padding-bottom: 20px;
+text-align: left;
+}
+
+.column_h4 {
+font-size: 14px;
+font-weight: normal;
+color: #999999;
+text-align: left;
+}
+
+.column_h5 {
+font-size: 11px;
+font-weight: normal;
+color: #a2b627;
+text-align: left;
+}
+
+#bottom_h4 {
+font-size: 14px;
+font-weight: normal;
+color: #999999;
+padding-left: 30px;
+padding-right: 30px;
+padding-top: 30px;
+text-align: left;
+}
+
+.button {
+padding: 30px;
+}
+
+.button a {
+color: #ffffff !important;
+}
+
+.button_h3 {
+font-size: 18px;
+font-weight: bold;
+color: #ffffff;
+padding-left: 10px;
+padding-right: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+border-width: 0 1px 3px;
+border-style: solid;
+border-color: #85941f;
+display: inline-block;
+border-radius: 5px;
+text-align: center;
+}
+
+.footer {
+font-size: 12px;
+color: #999999;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+.footer a {
+color: #999999 !important;
+}
+
+.social img {
+padding-left: 2px;
+padding-right: 2px;
+display: inline;
+}
+
+.social td {
+padding-bottom: 30px;
+}
+
+@media screen and (max-width: 480px) {  
+
+  #wrapper {
+    width: 100% !important;
+    max-width: 480px !important;
+  }
+
+}
+
+</style>
+
+
+
+</head>
+
+<body style="margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;background-color:#ffffff;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;" >
+
+<div id="div_wrapper" bgcolor="#ededed" style="min-width:320px;font-family:Verdana, Geneva, sans-serif;" >
+
+<table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ededed" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+  <tr>
+    <td align="center" style="border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+
+    <table cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" id="wrapper" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+      <tr>
+        <td width="600" style="border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+
+        <!-- PRE-HEADER -->
+
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ededed" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+         <tr>
+            <td width="100%" id="preheader" align="center" style="border-collapse:collapse;padding-right:0;padding-left:0;font-size:12px;font-weight:normal;color:#999999;padding-top:20px;padding-bottom:20px;" >
+              <a href="#" style="text-decoration:none;color:#999999 !important;">Open in browser</a>
+            </td>
+          </tr>
+        </table>
+
+        <!-- HEADER CONTENT -->
+
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+          <tr>
+            <td width="100%" id="header_h1" style="border-collapse:collapse;padding-bottom:0;padding-top:30px;padding-left:30px;padding-right:30px;font-size:21px;font-weight:bold;color:#222222;letter-spacing:-2px;line-height:-5px;text-align:left;" >
+              <span class="gcc" style="font-size:32px;letter-spacing:-4px;" >GCC |</span> green city challenge
+            </td>
+          </tr>
+          <tr>
+            <td width="100%" id="header_h2" style="border-collapse:collapse;padding-top:0;font-size:16px;font-weight:normal;color:#999999;padding-left:30px;padding-right:30px;padding-bottom:20px;letter-spacing:1px;text-align:left;" >
+              designing sustainable solutions for urban living
+            </td>
+          </tr>
+        </table>
+
+        <!-- HEADER PICTURE -->
+
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+          <tr>
+            <td width="100%" style="border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+              <a href="#" style="text-decoration:none;" ><img src="header-picture.png" width="100%" alt="" title="GCC Project" style="height:auto;line-height:100%;outline-style:none;text-decoration:none;-ms-interpolation-mode:bicubic;display:block;border-width:0;border-style:none;" ></a>
+            </td>
+          </tr>
+        </table>
+
+        <!-- BODY CONTENT -->
+
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+          <tr>
+            <td width="100%" id="body_h3" style="border-collapse:collapse;font-size:18px;font-weight:bold;color:#222222;padding-top:30px;padding-left:30px;padding-right:30px;padding-bottom:20px;text-align:left;" >
+              About the GCC project
+            </td>
+          </tr>
+          <tr>
+            <td width="100%" id="body_h4" style="border-collapse:collapse;padding-top:0;padding-bottom:0;font-size:14px;font-weight:normal;color:#999999;padding-left:30px;padding-right:30px;text-align:left;" >
+              Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.
+            </td>
+          </tr>
+        </table>
+
+        <!-- HR -->
+
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+          <tr>
+            <td width="100%" align="center" style="border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+              <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" align="center" class="hr" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#bbbbbb;width:90%;" >
+                <tr>
+                  <td width="100%" align="center" style="border-collapse:collapse;padding-top:0;padding-bottom:0;padding-left:20px;padding-right:20px;" >
+                    &nbsp;
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <!-- TWO-COLUMN TABLES -->
+
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+          <tr>
+            <td width="20%" class="left" align="left" style="border-collapse:collapse;padding-right:0;padding-top:30px;padding-left:30px;padding-bottom:20px;vertical-align:top;" >
+              <a href="#" style="text-decoration:none;" ><img src="icon-1.png" width="90" alt="" title="Sustainable Urban Mobility" style="height:auto;line-height:100%;outline-style:none;text-decoration:none;-ms-interpolation-mode:bicubic;display:block;border-width:0;border-style:none;" ></a>
+            </td>
+            <td width="80%" class="right" style="border-collapse:collapse;padding-top:30px;padding-left:30px;padding-right:30px;padding-bottom:20px;text-align:left;" >
+              <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+                <tr>
+                  <td width="100%" class="column_h5" style="border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:11px;font-weight:normal;color:#a2b627;text-align:left;" >
+                    project #01
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" class="column_h3" style="border-collapse:collapse;padding-top:0;padding-right:0;padding-left:0;font-size:16px;font-weight:bold;color:#222222;padding-bottom:20px;text-align:left;" >
+                    Sustainable Urban Mobility
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="100%" class="column_h4" style="border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:14px;font-weight:normal;color:#999999;text-align:left;" >
+                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+          <tr>
+            <td width="20%" class="left" align="left" style="border-collapse:collapse;padding-right:0;padding-top:30px;padding-left:30px;padding-bottom:20px;vertical-align:top;" >
+              <a href="#" style="text-decoration:none;" ><img src="icon-2.png" width="90" alt="" title="Rethinking public green space" style="height:auto;line-height:100%;outline-style:none;text-decoration:none;-ms-interpolation-mode:bicubic;display:block;border-width:0;border-style:none;" ></a>
+            </td>
+            <td width="80%" class="right" style="border-collapse:collapse;padding-top:30px;padding-left:30px;padding-right:30px;padding-bottom:20px;text-align:left;" >
+              <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+                <tr>
+                  <td width="100%" class="column_h5" style="border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:11px;font-weight:normal;color:#a2b627;text-align:left;" >
+                    project #02
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" class="column_h3" style="border-collapse:collapse;padding-top:0;padding-right:0;padding-left:0;font-size:16px;font-weight:bold;color:#222222;padding-bottom:20px;text-align:left;" >
+                    Rethinking public space
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" class="column_h4" style="border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:14px;font-weight:normal;color:#999999;text-align:left;" >
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolorem laudantium, totam rem aperiam, eaque ipsa quae ab illo. 
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+          <tr>
+            <td width="20%" class="left" align="left" style="border-collapse:collapse;padding-right:0;padding-top:30px;padding-left:30px;padding-bottom:20px;vertical-align:top;" >
+              <a href="#" style="text-decoration:none;" ><img src="icon-3.png" width="90" alt="" title="Art and urban rigeneration" style="height:auto;line-height:100%;outline-style:none;text-decoration:none;-ms-interpolation-mode:bicubic;display:block;border-width:0;border-style:none;" ></a>
+            </td>
+            <td width="80%" class="right" style="border-collapse:collapse;padding-top:30px;padding-left:30px;padding-right:30px;padding-bottom:20px;text-align:left;" >
+              <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+                <tr>
+                  <td width="100%" class="column_h5" style="border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:11px;font-weight:normal;color:#a2b627;text-align:left;" >
+                    project #03
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" class="column_h3" style="border-collapse:collapse;padding-top:0;padding-right:0;padding-left:0;font-size:16px;font-weight:bold;color:#222222;padding-bottom:20px;text-align:left;" >
+                    Art and urban rigeneration
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" class="column_h4" style="border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:14px;font-weight:normal;color:#999999;text-align:left;" >
+                     Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere et harum quidem rerum facilis.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+          <tr>
+            <td width="20%" class="left" align="left" style="border-collapse:collapse;padding-right:0;padding-top:30px;padding-left:30px;padding-bottom:20px;vertical-align:top;" >
+              <a href="#" style="text-decoration:none;" ><img src="icon-4.png" width="90" alt="" title="Smarter local shopping" style="height:auto;line-height:100%;outline-style:none;text-decoration:none;-ms-interpolation-mode:bicubic;display:block;border-width:0;border-style:none;" ></a>
+            </td>
+            <td width="80%" class="right" style="border-collapse:collapse;padding-top:30px;padding-left:30px;padding-right:30px;padding-bottom:20px;text-align:left;" >
+              <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+                  <tr>
+                  <td width="100%" class="column_h5" style="border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:11px;font-weight:normal;color:#a2b627;text-align:left;" >
+                    project #04
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" class="column_h3" style="border-collapse:collapse;padding-top:0;padding-right:0;padding-left:0;font-size:16px;font-weight:bold;color:#222222;padding-bottom:20px;text-align:left;" >
+                    Smarter local shopping 
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" class="column_h4" style="border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:14px;font-weight:normal;color:#999999;text-align:left;" >
+                     Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+          <tr>
+            <td width="20%" class="left" align="left" style="border-collapse:collapse;padding-right:0;padding-top:30px;padding-left:30px;padding-bottom:20px;vertical-align:top;" >
+              <a href="#" style="text-decoration:none;" ><img src="icon-5.png" width="90" alt="" title="Collective green housing" style="height:auto;line-height:100%;outline-style:none;text-decoration:none;-ms-interpolation-mode:bicubic;display:block;border-width:0;border-style:none;" ></a>
+            </td>
+            <td width="80%" class="right" style="border-collapse:collapse;padding-top:30px;padding-left:30px;padding-right:30px;padding-bottom:20px;text-align:left;" >
+              <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+                <tr>
+                  <td width="100%" class="column_h5" style="border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:11px;font-weight:normal;color:#a2b627;text-align:left;" >
+                    project #5
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" class="column_h3" style="border-collapse:collapse;padding-top:0;padding-right:0;padding-left:0;font-size:16px;font-weight:bold;color:#222222;padding-bottom:20px;text-align:left;" >
+                    Collective green housing
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" class="column_h4" style="border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;font-size:14px;font-weight:normal;color:#999999;text-align:left;" >
+                     Et dolore magnam aliquam quaerat voluptatem beatae vitae dicta sunt explicabo. Nemo enim ipsam ius modi tempora incidunt.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <!-- HR -->
+
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+          <tr>
+            <td width="100%" align="center" style="border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+              <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" align="center" class="hr" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#bbbbbb;width:90%;" >
+                <tr>
+                  <td width="100%" align="center" style="border-collapse:collapse;padding-top:0;padding-bottom:0;padding-left:20px;padding-right:20px;" >
+                    &nbsp;
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <!-- BOTTOM CONTENT -->
+
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+          <tr>
+            <td width="100%" id="bottom_h4" style="border-collapse:collapse;padding-bottom:0;font-size:14px;font-weight:normal;color:#999999;padding-left:30px;padding-right:30px;padding-top:30px;text-align:left;" >
+             What are you waiting for? Fugiat quo voluptas nulla pariatur vel illum qui dolorem eumat vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.
+            </td>
+          </tr>
+        </table>
+
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ffffff" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+          <tr>
+            <td width="15%" class="button" align="left" style="border-collapse:collapse;padding-top:30px;padding-bottom:30px;padding-right:30px;padding-left:30px;" >
+              <table style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+                <tr>
+                  <td width="100%" class="button_h3" bgcolor="#a2b627" style="border-collapse:collapse;font-size:18px;font-weight:bold;color:#ffffff;padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:10px;border-width:0 1px 3px;border-style:solid;border-color:#85941f;display:inline-block;border-radius:5px;text-align:center;" >
+                    <a href="#" title="Join Us" style="text-decoration:none;color:#ffffff !important;" >Join Us</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ededed" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+         <tr>
+            <td width="100%" class="footer" align="center" style="border-collapse:collapse;padding-right:0;padding-left:0;font-size:12px;color:#999999;padding-top:20px;padding-bottom:20px;" >
+              © GCC Project<br/>
+              <a href="#" style="text-decoration:none;color:#999999 !important;" >www.gccproject.com</a>  |  <a href="#" style="text-decoration:none;color:#999999 !important;" >Unsubscribe</a>
+            </td>
+          </tr>
+        </table>
+
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" bgcolor="#ededed" class="social" style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;" >
+         <tr>
+            <td width="100%" align="center" style="border-collapse:collapse;padding-top:0;padding-right:0;padding-left:0;padding-bottom:30px;" >
+              <a href="#" style="text-decoration:none;" ><img src="footer-facebook.png" width="35" alt="" title="Find us on Facebook" style="height:auto;line-height:100%;outline-style:none;text-decoration:none;-ms-interpolation-mode:bicubic;border-width:0;border-style:none;padding-left:2px;padding-right:2px;display:inline;" ></a>
+              <a href="#" style="text-decoration:none;" ><img src="footer-googleplus.png" width="35" alt="" title="Find us on Google+" style="height:auto;line-height:100%;outline-style:none;text-decoration:none;-ms-interpolation-mode:bicubic;border-width:0;border-style:none;padding-left:2px;padding-right:2px;display:inline;" ></a>
+              <a href="#" style="text-decoration:none;" ><img src="footer-twitter.png" width="35" alt="" title="Find us on Twitter" style="height:auto;line-height:100%;outline-style:none;text-decoration:none;-ms-interpolation-mode:bicubic;border-width:0;border-style:none;padding-left:2px;padding-right:2px;display:inline;" ></a>
+              <a href="#" style="text-decoration:none;" ><img src="footer-instagram.png" width="35" alt="" title="Find us on Instagram" style="height:auto;line-height:100%;outline-style:none;text-decoration:none;-ms-interpolation-mode:bicubic;border-width:0;border-style:none;padding-left:2px;padding-right:2px;display:inline;" ></a>
+              <a href="#" style="text-decoration:none;" ><img src="footer-youtube.png" width="35" alt="" title="Find us on Youtube" style="height:auto;line-height:100%;outline-style:none;text-decoration:none;-ms-interpolation-mode:bicubic;border-width:0;border-style:none;padding-left:2px;padding-right:2px;display:inline;" ></a>
+            </td>
+          </tr>
+        </table>
+
+        </td>
+      </tr>
+    </table>
+
+    </td>
+  </tr>
+</table>
+
+</div>
+  
+</body>
+</html>
